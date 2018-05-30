@@ -1,0 +1,1 @@
+web: ./build/install/house-hanting/bin/house-hanting
