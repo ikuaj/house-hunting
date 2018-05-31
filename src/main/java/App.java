@@ -25,6 +25,16 @@ public class App{
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
+        // post("/login", (request, response) -> {
+        //     Map<String, Object> model = new HashMap<String, Object>();
+        //     String username = request.queryParams("username");
+        //     String password = request.queryParams("password");
+        //     Login newLogin = new Login(username,password);
+        //     newLogin.save();
+        //     model.put("template", "templates/homepage.vtl");
+        //     return new ModelAndView(model, layout);
+        //   }, new VelocityTemplateEngine());
+
         get("/signup", (request, respond) ->{
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("template", "templates/signup.vtl");
@@ -34,6 +44,18 @@ public class App{
         get("/homepage", (request, respond) ->{
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("template", "templates/homepage.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        get("/contacts", (request, respond) ->{
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("template", "templates/contacts.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        get("/about", (request, respond) ->{
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("template", "templates/about.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
     }
